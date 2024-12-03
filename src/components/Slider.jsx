@@ -28,7 +28,7 @@ const Slider = () => {
             <div data-aos="fade-up">
             <a
               href='#main-section'
-              className="btn bg-transparent font-bold text-base text-white hover:bg-[#073B4c] border-2 border-[#073B4c]"
+              className="btn bg-transparent font-bold text-base text-white hover:bg-red-400 border-2 border-red-400"
             >
               View More
             </a>
@@ -53,15 +53,14 @@ const Slider = () => {
             className="w-full h-[500px] object-cover rounded-lg"
           />
           {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
-            <h3 data-aos="fade-right" className="text-5xl font-bold mb-4">Forest Expedition</h3>
-            <p data-aos="fade-left" className="mb-4 font-bold text-sm">
-            Venture deep into the heart of lush forests where towering trees stretch towards the sky, and every step leads you <br className='hidden md:block' />closer to nature’s hidden wonders. The forest expedition promises encounters with rare wildlife, the soothing sounds <br className='hidden md:block' /> of rustling leaves, and the intoxicating aroma of earth and greenery.
+          <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
+          <p data-aos="fade-left" className="mb-4 font-bold text-lg">           
+              Movies have a unique ability to transport us to different worlds, stir emotions, and evoke memories. <br className='hidden md:block' /> They are a reflection of our lives, dreams, and fantasies, offering a window into cultures, stories,<br className='hidden md:block' /> and experiences we might never encounter otherwise
             </p>
           <div data-aos="fade-up">
           <a
               href='#main-section'
-              className="btn bg-transparent font-bold text-base text-white hover:bg-[#073B4c] border-2 border-[#073B4c]"
+              className="btn bg-transparent font-bold text-base text-white hover:bg-red-400 border-2 border-red-400"
             >
               View More
             </a>
@@ -86,15 +85,14 @@ const Slider = () => {
             className="w-full h-[500px] object-cover rounded-lg"
           />
           {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
-            <h3 data-aos="fade-right" className="text-5xl font-bold mb-4">Desert Exploration</h3>
-            <p data-aos="fade-left" className="mb-4 font-bold text-sm">
-            Embark on an unforgettable journey through sun-soaked deserts, discovering the hidden secrets of this arid world.<br className='hidden md:block' /> From the soft rustling of the wind to the magical glow of the night sky, every moment in the desert is<br className='hidden md:block' /> a step closer to nature's raw and untouched beauty.
+          <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
+          <p data-aos="fade-left" className="mb-4 font-bold text-lg">           
+              Movies have a unique ability to transport us to different worlds, stir emotions, and evoke memories. <br className='hidden md:block' /> They are a reflection of our lives, dreams, and fantasies, offering a window into cultures, stories,<br className='hidden md:block' /> and experiences we might never encounter otherwise
             </p>
             <div data-aos="fade-up">
             <a
               href='#main-section'
-              className="btn bg-transparent font-bold text-base text-white hover:bg-[#073B4c] border-2 border-[#073B4c]"
+              className="btn bg-transparent font-bold text-base text-white hover:bg-red-400 border-2 border-red-400"
             >
               View More
             </a>

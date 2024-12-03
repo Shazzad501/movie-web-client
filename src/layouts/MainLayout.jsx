@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <div>
       {/* navigation bar */}
-      <nav>
+      <nav className='sticky top-0 left-0 right-0 z-50'>
         <Navbar></Navbar>
       </nav>
       {/* <div>

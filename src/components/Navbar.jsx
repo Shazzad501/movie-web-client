@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <a className="btn hover:bg-transparent bg-transparent border-none shadow-none text-2xl">Movie Lover</a>
+        <a className="btn hover:bg-transparent bg-transparent border-none shadow-none text-2xl">Movie <span className='text-red-400'>Lover</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 flex gap-4">
