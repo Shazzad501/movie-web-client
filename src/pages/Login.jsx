@@ -78,7 +78,7 @@ const Login = () => {
 
   useEffect(()=>{
     // dynamic title
-    document.title="Login || Eco-Adventure"
+    document.title="Login || Movie Lover"
 
     AOS.init({
       duration: 1500,
@@ -136,7 +136,7 @@ const Login = () => {
               <button onClick={handleGoogleLogin} className="btn mt-6 bg-[#073B4c] font-bold text-base text-white hover:bg-[#073B4c]"><FaGoogle></FaGoogle>Login with Google</button>
             </div>
           </form>
-          <p className='font-semibold text-sm text-center'>Don't Have An Account? <Link to='/auth/register' className='font-semibold text-sm text-red-600 underline'>Register</Link></p>
+          <p className='font-semibold text-sm text-center'>Don't Have An Account? <Link to='/register' className='font-semibold text-sm text-red-600 underline'>Register</Link></p>
         </div>
     </div>
   );
