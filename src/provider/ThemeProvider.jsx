@@ -10,7 +10,7 @@ const getSystemTheme = () => {
 };
 
 // ThemeProvider Component
-export const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(getSystemTheme);
 
   useEffect(() => {
@@ -31,3 +31,4 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+export default ThemeProvider;
