@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 
 const Register = () => {
-  const {newUserSet, setUser, upDateProfile} = useContext(AuthContext);
+  const {newUserSet, user, setUser, upDateProfile} = useContext(AuthContext);
   const navigate = useNavigate()
   // eye pass show stat
   const [showPass, setShowPass] = useState(false)
@@ -37,13 +37,11 @@ const Register = () => {
       setUser(res.user);
       navigate('/')
       e.target.reset();
-      toast.success("Successfully Regisered!")
+      toast.success(`Registration success!!`)
 
 // user profile updation
     upDateProfile({displayName: name, photoURL: photo})
-    .then(()=>{
-      toast.success("Profile Update success!!")
-    })
+    .then(()=>{})
     .catch((err)=>{
       setError(`${err.message}`)
     })

@@ -35,6 +35,11 @@ const AuthProvider = ({children}) => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
+    // update user profile
+    const upDateProfile=(upDateData)=>{
+      setLoading(false);
+      return updateProfile(auth.currentUser, upDateData)
+    }
 
 
   // observer handler effect
@@ -53,6 +58,7 @@ const AuthProvider = ({children}) => {
     newUserSet,
     loginUser,
     logoutUser,
+    upDateProfile,
     user,
     setUser,
     setLoading,
