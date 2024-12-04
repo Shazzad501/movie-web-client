@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -88,6 +88,10 @@ const AddMovieForm = () => {
     }
   };
 
+  useEffect(()=>{
+    document.title = "Add Movie || Movie Lover"
+  },[])
+
   return (
     <div className="rounded-lg shadow-lg my-7">
       <h2 className="text-3xl font-bold text-center mb-6">Add a New Movie</h2>
@@ -135,7 +139,7 @@ const AddMovieForm = () => {
               <option value="drama">Drama</option>
               <option value="horror">Horror</option>
               <option value="action">Action</option>
-              <option value="thriller">Thriller</option>
+              <option value="romantic">Romantic</option>
             </select>
             {errors.genre && (
               <p className="text-red-500 text-sm mt-1">{errors.genre}</p>

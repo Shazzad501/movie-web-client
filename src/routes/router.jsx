@@ -8,6 +8,7 @@ import UpdateMovie from "../pages/UpdateMovie";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import FavoriteMovie from "../pages/FavoriteMovie";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-movie',
-        element: <AddMovie></AddMovie>
+        element: <PrivateRoute><AddMovie></AddMovie></PrivateRoute>
       },
       {
         path: '/movie/:id',
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/favorite-movie',
-        element: <FavoriteMovie></FavoriteMovie>
+        element: <PrivateRoute><FavoriteMovie></FavoriteMovie></PrivateRoute>
       },
       {
         path: '/login',

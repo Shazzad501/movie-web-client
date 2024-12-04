@@ -41,7 +41,8 @@ const Navbar = () => {
             }>
             Movies
           </NavLink>
-          <NavLink
+          { 
+           user && <NavLink
             to="/add-movie"
             className={({ isActive }) =>
               `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
@@ -50,6 +51,18 @@ const Navbar = () => {
             }>
             Add Movie
           </NavLink>
+          }
+           { 
+           user && <NavLink
+            to="/favorite-movie"
+            className={({ isActive }) =>
+              `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
+                isActive ? 'border-b-4 border-l-0 border-r-0 border-t-0' : ''
+              }`
+            }>
+            Favorite Movie
+          </NavLink>
+          }
         </ul>
       </div>
       <div className="navbar-end flex gap-3 items-center">
@@ -58,11 +71,10 @@ const Navbar = () => {
             <div
               title={user && user?.displayName}
               className="w-12 h-12 rounded-full overflow-hidden border-2">
-              <img
-                src={user && user?.photoURL}
-                alt="User img"
-                className="w-full h-full object-cover"
-              />
+              <img 
+            className="w-full h-full object-cover"
+            src={user && user?.photoURL} 
+            alt="user img" />
             </div>
             <Link onClick={handleLogout} className="btn font-bold text-base">
               Logout
@@ -112,6 +124,28 @@ const Navbar = () => {
               }>
               Movies
             </NavLink>
+            { 
+            user && <NavLink
+              to="/add-movie"
+              className={({ isActive }) =>
+                `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
+                  isActive ? 'border-b-4 border-l-0 border-r-0 border-t-0' : ''
+                }`
+              }>
+              Add Movie
+            </NavLink>
+            }
+            { 
+            user && <NavLink
+              to="/favorite-movie"
+              className={({ isActive }) =>
+                `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
+                  isActive ? 'border-b-4 border-l-0 border-r-0 border-t-0' : ''
+                }`
+              }>
+              Favorite Movie
+            </NavLink>
+            }
           </ul>
         </div>
       </div>
