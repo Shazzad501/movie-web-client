@@ -25,15 +25,16 @@ const MovieCard = ({movie}) => {
         <p className="text-gray-600">
           <span className="font-semibold">Release Year:</span> {movie.releaseYear}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <span className="font-semibold text-gray-700">Rating:</span>
+          <p>
           <Rating
             initialRating={parseFloat(movie.rating)}
-            emptySymbol={<FaRegStar className="text-gray-500 text-xl" />}
-            fullSymbol={<FaStar className="text-yellow-500 text-xl" />}
+            emptySymbol={<FaRegStar className="text-gray-500 text-lg" />}
+            fullSymbol={<FaStar className="text-yellow-500 text-lg" />}
             readonly
-            className="ml-2"
           />
+          </p>
         </div>
         <div className="card-actions mt-5">
           <button className="btn w-full">

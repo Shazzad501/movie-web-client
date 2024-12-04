@@ -22,8 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/all-movie',
-        element: <AllMovie></AllMovie>,
-        loader: ()=>fetch('http://localhost:5000/movie')
+        element: <AllMovie></AllMovie>
       },
       {
         path: '/add-movie',
