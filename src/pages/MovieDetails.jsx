@@ -11,7 +11,11 @@ const MovieDetails = () => {
   console.log(user)
 
   const handleDelete = () => {
-    if(user?.email === movie?.userEmail){
+    // if(user?.email === movie?.userEmail){
+    // }
+    // else{
+    //   toast.error("You aren't creator this movie. So you can't delete this!!")
+    // }
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -38,39 +42,35 @@ const MovieDetails = () => {
               toast.error("Something went wrong!");
             });
         }
-      });
-    }
-    else{
-      toast.error("You aren't creator this movie. So you can't delete this!!")
-    }
+      });   
   };
 
-  // const handleAddToFavorites = () => {
-  //   const favoriteData = {
-  //     userEmail: movie.userEmail,
-  //     ...movie,
-  //   };
+  const handleAddToFavorites = () => {
+    const favoriteData = {
+      userEmail: movie.userEmail,
+      ...movie,
+    };
 
-  //   fetch("http://localhost:5000/favorites", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(favoriteData),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         toast.success("Movie added to favorites!");
-  //       } else {
-  //         toast.error("Failed to add the movie to favorites.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error adding to favorites:", error);
-  //       toast.error("Something went wrong!");
-  //     });
-  // };
+    fetch("http://localhost:5000/favorites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(favoriteData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Movie added to favorites!");
+        } else {
+          toast.error("Failed to add the movie to favorites.");
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        toast.error("Something went wrong!");
+      });
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-5 my-10 rounded-lg shadow-lg bg-white">
@@ -109,7 +109,7 @@ const MovieDetails = () => {
           Delete Movie
         </button>
         <button
-          // onClick={handleAddToFavorites}
+          onClick={handleAddToFavorites}
           className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
           Add to Favorite

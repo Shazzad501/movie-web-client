@@ -84,6 +84,9 @@ const AddMovieForm = () => {
           toast.success("Movie added successfully!");
           form.reset();
         }
+        else {
+          toast.error("Failed to add the movie.");
+        }
       })
     }
   };
