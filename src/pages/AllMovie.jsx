@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
+import toast from 'react-hot-toast';
 
 const AllMovie = () => {
   const [loading, setLoading] = useState(true);
@@ -13,11 +14,11 @@ const AllMovie = () => {
       .then((res) => res.json())
       .then((data) => {
         setMoviesData(data);
-        setFilteredMovies(data); // Initialize filtered movies
+        setFilteredMovies(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching movies:', error);
+        toast.error('Error fetching movies:', error);
         setLoading(false);
       });
   }, []);

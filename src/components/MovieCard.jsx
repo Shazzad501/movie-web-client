@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({movie}) => {
   return (
@@ -37,9 +38,9 @@ const MovieCard = ({movie}) => {
           </p>
         </div>
         <div className="card-actions mt-5">
-          <button className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+          <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>
