@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Loading from '../components/Loading';
-import MovieCard from '../components/MovieCard';
 import toast from 'react-hot-toast';
+import FavoriteCard from '../components/FavoriteCard';
 
 
 const FavoriteMovie = () => {
@@ -45,7 +45,7 @@ const FavoriteMovie = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
       {moviesData.map((movie) => (
-        <MovieCard key={movie._id} movie={movie} />
+        <FavoriteCard key={movie._id} movie={movie} setMoviesData={setMoviesData} />
       ))}
     </div>
   );

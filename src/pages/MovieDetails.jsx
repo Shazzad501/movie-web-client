@@ -11,7 +11,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const {user} = useContext(AuthContext);
 
-  const handleDelete = () => {
+  const handleDelete = (id) => {
     // if(user?.email === movie?.userEmail){
     // }
     // else{
@@ -27,7 +27,7 @@ const MovieDetails = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/movie/${movie._id}`, {
+          fetch(`http://localhost:5000/movie/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -46,17 +46,16 @@ const MovieDetails = () => {
       });   
   };
 
-  const handleAddToFavorites = () => {
+  const handleAddToFavorites = (id) => {
     const favoriteData = {
-      userEmail: movie.userEmail,
+      favoriteEmail: user?.email,
       ...movie,
     };
 
-    fetch(`http://localhost:5000/favorites/${movie._id}`)
+    fetch(`http://localhost:5000/favorites/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
-      if (data) {
+      if (data.exists) {
         // Movie already exists in favorites
         toast.error("This movie is already in your favorites!");
       }
@@ -121,13 +120,13 @@ const MovieDetails = () => {
       </div>
       <div className="flex gap-4 mt-6 justify-center">
         <button
-          onClick={handleDelete}
+          onClick={()=>handleDelete(movie._id)}
           className="btn bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
          <span className="font-bold text-xl"><FaDeleteLeft></FaDeleteLeft></span> Delete
         </button>
         <button
-          onClick={handleAddToFavorites}
+          onClick={()=>handleAddToFavorites(movie._id)}
           className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
           <span className="font-bold text-lg"><FaHeart></FaHeart></span> Favorite

@@ -2,9 +2,45 @@ import React from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import { FaDeleteLeft } from "react-icons/fa6";
 
 
-const MovieCard = ({movie}) => {
+const FavoriteCard = ({movie, setMoviesData}) => {
+
+  // handle favorite movie delete
+  const handleFavoriteMovieDel = (id)=>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/favorites/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "The movie has been deleted.", "success");
+              setMoviesData((prevMovies) =>
+                prevMovies.filter((movie) => movie._id !== id)
+              );
+            } else {
+              toast.error("Failed to delete the movie.");
+            }
+          })
+          .catch((error) => {
+            toast.error("Something went wrong!",error);
+          });
+      }
+    });
+  }
   return (
     <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
@@ -39,8 +75,8 @@ const MovieCard = ({movie}) => {
           </p>
         </div>
         <div className="card-actions mt-5"> 
-          <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
-          View Details
+          <Link onClick={()=>handleFavoriteMovieDel(movie._id)} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+          <span className="font-bold text-xl"><FaDeleteLeft></FaDeleteLeft></span> Delete
         </Link>
         </div>
       </div>
@@ -48,4 +84,4 @@ const MovieCard = ({movie}) => {
   );
 };
 
-export default MovieCard;
+export default FavoriteCard;
