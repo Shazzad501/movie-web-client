@@ -3,12 +3,13 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { FaEdit, FaHeart } from "react-icons/fa";
 
 const MovieDetails = () => {
   const movie = useLoaderData();
   const navigate = useNavigate();
   const {user} = useContext(AuthContext);
-  console.log(user)
 
   const handleDelete = () => {
     // if(user?.email === movie?.userEmail){
@@ -51,25 +52,38 @@ const MovieDetails = () => {
       ...movie,
     };
 
-    fetch("http://localhost:5000/favorites", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(favoriteData),
+    fetch(`http://localhost:5000/favorites/${movie._id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      if (data) {
+        // Movie already exists in favorites
+        toast.error("This movie is already in your favorites!");
+      }
+      else{
+        fetch("http://localhost:5000/favorites", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(favoriteData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              toast.success("Movie added to favorites!");
+            } else {
+              toast.error("Failed to add the movie to favorites.");
+            }
+          })
+          .catch((error) => {
+            toast.error("Something went wrong!", error);
+          });
+      }
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          toast.success("Movie added to favorites!");
-        } else {
-          toast.error("Failed to add the movie to favorites.");
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        toast.error("Something went wrong!");
-      });
+      
+
+    
   };
 
   useEffect(()=>{
@@ -110,19 +124,19 @@ const MovieDetails = () => {
           onClick={handleDelete}
           className="btn bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
-          Delete Movie
+         <span className="font-bold text-xl"><FaDeleteLeft></FaDeleteLeft></span> Delete
         </button>
         <button
           onClick={handleAddToFavorites}
           className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
-          Add to Favorite
+          <span className="font-bold text-lg"><FaHeart></FaHeart></span> Favorite
         </button>
         <Link 
         to={`/update-movie/${movie._id}`}
         className="btn bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
-          Update Movie
+          <span className="font-bold text-lg"><FaEdit></FaEdit></span> Update
         </Link>
       </div>
     </div>
