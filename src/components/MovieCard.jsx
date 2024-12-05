@@ -37,7 +37,7 @@ const MovieCard = ({movie}) => {
           </p>
         </div>
         <div className="card-actions mt-5">
-          <button className="btn w-full">
+          <button className="btn w-full bg-red-400 hover:bg-red-400 text-white">
             View Details
           </button>
         </div>
