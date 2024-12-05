@@ -1,7 +1,7 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const MovieDetails = () => {
@@ -72,6 +72,10 @@ const MovieDetails = () => {
       });
   };
 
+  useEffect(()=>{
+    document.title = "Details || Movie Lover"
+  }, [])
+
   return (
     <div className="max-w-4xl mx-auto p-5 my-10 rounded-lg shadow-lg bg-white">
       <div className="flex flex-col lg:flex-row gap-5">
@@ -114,6 +118,12 @@ const MovieDetails = () => {
         >
           Add to Favorite
         </button>
+        <Link 
+        to={`/update-movie/${movie._id}`}
+        className="btn bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg"
+        >
+          Update Movie
+        </Link>
       </div>
     </div>
   );
