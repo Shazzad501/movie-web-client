@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
@@ -11,6 +11,7 @@ const FavoriteCard = ({movie, setMoviesData}) => {
 
   // handle favorite movie delete
   const handleFavoriteMovieDel = (id)=>{
+    console.log(id)
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -42,6 +43,7 @@ const FavoriteCard = ({movie, setMoviesData}) => {
     });
   }
   return (
+
     <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
         <img

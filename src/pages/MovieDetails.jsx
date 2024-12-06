@@ -34,7 +34,7 @@ const MovieDetails = () => {
             .then((data) => {
               if (data.deletedCount > 0) {
                 Swal.fire("Deleted!", "The movie has been deleted.", "success");
-                navigate("/all-movies");
+                navigate("/all-movie");
               } else {
                 toast.error("Failed to delete the movie.");
               }
@@ -46,43 +46,34 @@ const MovieDetails = () => {
       });   
   };
 
-  const handleAddToFavorites = (id) => {
-    const favoriteData = {
-      favoriteEmail: user?.email,
-      ...movie,
-    };
-
-    fetch(`http://localhost:5000/favorites/${id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.length > 0) {
-        // Movie already exists in favorites
-        toast.error("This movie is already in your favorites!");
-      }
-      else{
-        fetch("http://localhost:5000/favorites", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(favoriteData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.insertedId) {
-              toast.success("Movie added to favorites!");
-            } else {
-              toast.error("Failed to add the movie to favorites.");
-            }
+  const handleAddToFavorites = () => {
+    // Create a new object that omits the '_id' from the movie object
+    const { _id, ...movieWithoutId } = movie;
+    const favoriteData = { favoriteEmail: user?.email, ...movieWithoutId };
+  
+    fetch(`http://localhost:5000/favorites/${user?.email}`)
+      .then((res) => res.json())
+      .then((favorites) => {
+        const isAlreadyFavorite = favorites.some((fav) => fav._id === movie._id);
+        if (isAlreadyFavorite) {
+          toast.error("This movie is already in your favorites!");
+        } else {
+          fetch("http://localhost:5000/favorites", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(favoriteData),
           })
-          .catch((error) => {
-            toast.error("Something went wrong!", error);
-          });
-      }
-    })
-      
-
-    
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) toast.success("Movie added to favorites!");
+              else toast.error("Failed to add movie to favorites.");
+            })
+            .catch((err) => {
+              console.log(err)
+              toast.error("Something went wrong!")
+            });
+        }
+      });
   };
 
   useEffect(()=>{

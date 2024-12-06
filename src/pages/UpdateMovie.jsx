@@ -96,7 +96,7 @@ const UpdateMovie = () => {
   }, [])
   return (
     <div className="rounded-lg shadow-lg my-7">
-      <h2 className="text-3xl font-bold text-center mb-6">Add a New Movie</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">Update {movie.title} Movie</h2>
       <form onSubmit={handleUpdateMovie} className="w-11/12 mx-auto">
         {/* Movie Poster and title */}
         <div className="w-full flex flex-col lg:flex-row gap-5">
@@ -225,7 +225,7 @@ const UpdateMovie = () => {
           <input
             type="submit"
             value="Update Movie"
-            className="px-6 py-3 btn font-bold rounded-lg my-5"
+            className="px-6 py-3 btn font-bold rounded-lg my-5 bg-green-600 hover:bg-green-700 text-white"
           />
         </div>
       </form>

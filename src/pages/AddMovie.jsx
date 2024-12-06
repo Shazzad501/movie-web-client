@@ -97,7 +97,8 @@ const AddMovieForm = () => {
 
   return (
     <div className="rounded-lg shadow-lg my-7">
-      <h2 className="text-3xl font-bold text-center mb-6">Add a New Movie</h2>
+      <h2 className="text-3xl font-bold text-center mb-3">Add a New Movie</h2>
+      <p className="text-center text-base font-semibold mb-6">Adding a new movie is an exciting opportunity to share stories and   <br className="hidden md:block" />creativity with the world. Whether it's a thrilling blockbuster, a heartfelt drama, or a light-hearted comedy,<br className="hidden md:block" /> every new movie contributes to the diverse world of cinema.</p>
       <form onSubmit={handleAddMovie} className="w-11/12 mx-auto">
         {/* Movie Poster and title */}
         <div className="w-full flex flex-col lg:flex-row gap-5">
@@ -219,7 +220,7 @@ const AddMovieForm = () => {
           <input
             type="submit"
             value="Add Movie"
-            className="px-6 py-3 btn font-bold rounded-lg my-5"
+            className="px-6 py-3 btn font-bold rounded-lg my-5 bg-green-600 text-white hover:bg-green-700"
           />
         </div>
       </form>

@@ -43,10 +43,16 @@ const FavoriteMovie = () => {
   }
 
   return (
+    <div className='flex flex-col gap-6'>
+      <div className='text-center'>
+      <h2 className='font-bold text-3xl'>Hey!! {user?.displayName} this is your all favorite movie</h2>
+      <p className='font-bold text-base mt-3'>Favorites are a personal collection of movies that hold a special place in our hearts. They represent films <br className='hidden lg:block' /> that resonate deeply, evoke emotions, or provide unforgettable entertainment. Adding a movie to your favorites is like bookmarking <br className='hidden lg:block' /> a cherished memory, ensuring it’s always within reach for a rewatch or recommendation. </p>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
       {moviesData.map((movie) => (
         <FavoriteCard key={movie._id} movie={movie} setMoviesData={setMoviesData} />
       ))}
+    </div>
     </div>
   );
 };
