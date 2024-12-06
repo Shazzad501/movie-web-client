@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import FavoriteMovie from "../pages/FavoriteMovie";
 import PrivateRoute from "./PrivateRoute";
 import MovieDetails from "../pages/MovieDetails";
+import FeaturedMovie from "../components/FeaturedMovie";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,14 @@ const router = createBrowserRouter([
     children:[
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        children: [
+          {
+            path: '/',
+            element: <FeaturedMovie></FeaturedMovie>
+          }
+        ]
+
       },
       {
         path: '/all-movie',
