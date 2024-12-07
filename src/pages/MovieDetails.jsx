@@ -47,7 +47,6 @@ const MovieDetails = () => {
   };
 
   const handleAddToFavorites = () => {
-    // Create a new object that omits the '_id' from the movie object
     const { _id, ...movieWithoutId } = movie;
     const favoriteData = { favoriteEmail: user?.email, ...movieWithoutId };
   
@@ -81,7 +80,7 @@ const MovieDetails = () => {
   }, [])
 
   return (
-    <div className="max-w-4xl mx-auto p-5 my-10 rounded-lg shadow-lg bg-white">
+    <div className="max-w-4xl mx-auto p-5 my-10 rounded-lg shadow-lg bg-white text-black">
       <div className="flex flex-col lg:flex-row gap-5">
         <img
           src={movie.poster}

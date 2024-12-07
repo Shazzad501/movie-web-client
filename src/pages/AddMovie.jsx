@@ -97,7 +97,7 @@ const AddMovieForm = () => {
   },[])
 
   return (
-    <div className="rounded-lg shadow-lg my-7">
+    <div className="rounded-lg shadow-lg my-7 w-full">
       <div className="px-5">
       <h2 className="text-4xl font-bold text-center mb-3">
           <Typewriter
@@ -124,7 +124,7 @@ const AddMovieForm = () => {
             <input
               type="text"
               name="poster"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
               placeholder="Enter image URL"
             />
             {errors.poster && (
@@ -136,7 +136,7 @@ const AddMovieForm = () => {
             <input
               type="text"
               name="title"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
               placeholder="Enter movie title"
             />
             {errors.title && (
@@ -151,7 +151,7 @@ const AddMovieForm = () => {
             <label className="block text-lg font-medium mb-2">Genre</label>
             <select
               name="genre"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
             >
               <option value="">Select Genre</option>
               <option value="comedy">Comedy</option>
@@ -171,7 +171,7 @@ const AddMovieForm = () => {
             <input
               type="number"
               name="duration"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
               placeholder="Enter duration in minutes"
             />
             {errors.duration && (
@@ -186,7 +186,7 @@ const AddMovieForm = () => {
             <label className="block text-lg font-medium mb-2">Release Year</label>
             <select
               name="releaseYear"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
             >
               <option value="">Select Year</option>
               <option value="2024">2024</option>
@@ -205,7 +205,7 @@ const AddMovieForm = () => {
             <input
               type="number"
               name="rating"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
               placeholder="Enter a rating (1 to 5)"
               min="1"
               max="5"
@@ -221,7 +221,7 @@ const AddMovieForm = () => {
           <label className="block text-lg font-medium mb-2">Summary</label>
           <textarea
             name="summary"
-            className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+            className="w-full px-4 py-2 rounded-lg border-2"
             rows="4"
             placeholder="Write a short summary of the movie"
           ></textarea>

@@ -11,6 +11,8 @@ const AllMovie = () => {
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
+    // daynamic title 
+    document.title = "Movies || Movie Lover"
     fetch('http://localhost:5000/movie')
       .then((res) => res.json())
       .then((data) => {

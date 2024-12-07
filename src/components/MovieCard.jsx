@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { Link} from "react-router-dom";
-import toast from "react-hot-toast";
-
+import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MovieCard = ({movie}) => {
+
+  useEffect(() => {
+    // Initialize AOS animation
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
   return (
-    <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
+    <div data-aos='fade-down' className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
         <img
           src={movie.poster}
@@ -16,7 +23,7 @@ const MovieCard = ({movie}) => {
         />
       </figure>
       <div className="card-body p-5">
-        <h2 className="card-title text-2xl font-bold text-gray-800">
+        <h2 className="card-title text-2xl font-bold">
           {movie.title}
         </h2>
         <p className="text-gray-600">
@@ -40,10 +47,11 @@ const MovieCard = ({movie}) => {
           </p>
         </div>
         <div className="card-actions mt-5"> 
-        
-            <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+          <button className="w-full">
+          <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
           View Details
           </Link>
+          </button>
 
         </div>
       </div>

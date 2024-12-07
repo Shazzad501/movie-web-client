@@ -121,7 +121,7 @@ const UpdateMovie = () => {
             defaultValue={movie.poster}
               type="text"
               name="poster"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
               placeholder="Enter image URL"
             />
             {errors.poster && (
@@ -134,7 +134,7 @@ const UpdateMovie = () => {
             defaultValue={movie.title}
               type="text"
               name="title"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg  border-2"
               placeholder="Enter movie title"
             />
             {errors.title && (
@@ -150,7 +150,7 @@ const UpdateMovie = () => {
             <select
               defaultValue={movie.genre}
               name="genre"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
             >
               <option value="">Select Genre</option>
               <option value="comedy">Comedy</option>
@@ -171,7 +171,7 @@ const UpdateMovie = () => {
             defaultValue={movie.duration}
               type="number"
               name="duration"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
               placeholder="Enter duration in minutes"
             />
             {errors.duration && (
@@ -187,7 +187,7 @@ const UpdateMovie = () => {
             <select
               defaultValue={movie.releaseYear}
               name="releaseYear"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
             >
               <option value="">Select Year</option>
               <option value="2024">2024</option>
@@ -207,7 +207,7 @@ const UpdateMovie = () => {
             defaultValue={movie.rating}
               type="number"
               name="rating"
-              className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+              className="w-full px-4 py-2 rounded-lg border-2"
               placeholder="Enter a rating (1 to 5)"
               min="1"
               max="5"
@@ -224,7 +224,7 @@ const UpdateMovie = () => {
           <textarea
           defaultValue={movie.summary}
             name="summary"
-            className="w-full px-4 py-2 rounded-lg bg-white text-gray-800 border-2"
+            className="w-full px-4 py-2 rounded-lg border-2"
             rows="4"
             placeholder="Write a short summary of the movie"
           ></textarea>

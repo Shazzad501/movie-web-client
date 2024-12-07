@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { FaDeleteLeft } from "react-icons/fa6";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const FavoriteCard = ({movie, setMoviesData}) => {
@@ -42,9 +44,16 @@ const FavoriteCard = ({movie, setMoviesData}) => {
       }
     });
   }
+
+  useEffect(() => {
+    // Initialize AOS animation
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
   return (
 
-    <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
+    <div data-aos='fade-down' className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
         <img
           src={movie.poster}
@@ -53,7 +62,7 @@ const FavoriteCard = ({movie, setMoviesData}) => {
         />
       </figure>
       <div className="card-body p-5">
-        <h2 className="card-title text-2xl font-bold text-gray-800">
+        <h2 className="card-title text-2xl font-bold">
           {movie.title}
         </h2>
         <p className="text-gray-600">

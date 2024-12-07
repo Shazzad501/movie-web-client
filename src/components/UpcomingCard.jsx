@@ -1,9 +1,17 @@
 import toast from 'react-hot-toast';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const UpcomingCard = ({movie}) => {
+  useEffect(() => {
+    // Initialize AOS animation
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
   return (
-    <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
+    <div data-aos='fade-down' className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
         <img
           src={movie.poster}
@@ -12,7 +20,7 @@ const UpcomingCard = ({movie}) => {
         />
       </figure>
       <div className="card-body p-5">
-        <h2 className="card-title text-2xl font-bold text-gray-800">
+        <h2 className="card-title text-2xl font-bold">
           {movie.title}
         </h2>
         <p className="text-gray-600">

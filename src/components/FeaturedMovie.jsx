@@ -16,7 +16,7 @@ const FeaturedMovie = () => {
 
   return (
     <div id="main-section" className="">
-     <div className="bg-gradient-to-b from-red-400 to-transparent py-10 rounded-md px-5">
+     <div className="py-10 rounded-md px-5">
      <div className="flex flex-col justify-center items-center text-center">
       <h2 className="text-3xl font-bold mb-3">Featured Movies</h2>
       <p className="font-semibold text-base mb-6">Discover the best of cinema with our curated selection of featured movies! <br className="hidden md:block" /> These are the highest-rated films, handpicked based on their exceptional storytelling, direction, and performances.Whether you're in<br className="hidden md:block" /> the mood for an action-packed adventure, a heartwarming drama.</p>
