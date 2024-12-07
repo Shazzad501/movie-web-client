@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -14,6 +14,10 @@ const Register = () => {
   const [showPass, setShowPass] = useState(false)
   // error state
   const [error, setError]= useState('')
+  const location = useLocation()
+
+  // redirect path
+  const redirectPath = location?.state?.from?.pathname || '/';
 
   // handle registration function
   const handleRegister=(e)=>{
@@ -36,7 +40,7 @@ const Register = () => {
     newUserSet(email, password)
     .then(res => {
       setUser(res.user);
-      navigate('/')
+      navigate(redirectPath)
       e.target.reset();
       toast.success(`Registration success!!`)
 

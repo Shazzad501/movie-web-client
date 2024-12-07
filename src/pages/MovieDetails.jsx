@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaDeleteLeft } from "react-icons/fa6";
+import { FaDeleteLeft, FaLeftLong } from "react-icons/fa6";
 import { FaEdit, FaHeart } from "react-icons/fa";
 
 const MovieDetails = () => {
@@ -109,17 +109,17 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className="flex gap-4 mt-6 justify-center">
+      <Link 
+        to={`/all-movie`}
+        className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
+        >
+          <span className="font-bold text-lg"><FaLeftLong/></span> See all
+        </Link>
         <button
           onClick={()=>handleDelete(movie._id)}
           className="btn bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg"
         >
          <span className="font-bold text-xl"><FaDeleteLeft></FaDeleteLeft></span> Delete
-        </button>
-        <button
-          onClick={()=>handleAddToFavorites(movie._id)}
-          className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
-        >
-          <span className="font-bold text-lg"><FaHeart></FaHeart></span> Favorite
         </button>
         <Link 
         to={`/update-movie/${movie._id}`}
@@ -127,6 +127,12 @@ const MovieDetails = () => {
         >
           <span className="font-bold text-lg"><FaEdit></FaEdit></span> Update
         </Link>
+        <button
+          onClick={()=>handleAddToFavorites(movie._id)}
+          className="btn bg-red-400 hover:bg-red-400 text-white font-semibold px-6 py-3 rounded-lg"
+        >
+          <span className="font-bold text-lg"><FaHeart></FaHeart></span> Favorite
+        </button>
       </div>
     </div>
   );

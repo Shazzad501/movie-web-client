@@ -1,8 +1,22 @@
-# React + Vite
+Assignment Category: Orchid
+Website Name: Movie Lover
+Live Site: https://movie-lover-a62ea.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Five Key Features of This Website:
 
-Currently, two official plugins are available:
+*** Email and Password Authentication: Seamless login and registration functionality.
+*** Google Login Integration: Enables users to log in quickly via Google.
+*** Password Recovery: Forget password feature for hassle-free account recovery.
+*** HTTP Operations:
+      1.POST: Handles data submission effectively.
+      2.PUT: Enables updates to existing data.
+      3.DELETE: Supports secure deletion of data.
+*** Interactive Toast Notifications: Engaging and informative toast messages enhance user
+    experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+
+
