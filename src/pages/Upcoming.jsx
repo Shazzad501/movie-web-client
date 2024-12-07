@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
-import MovieCard from '../components/MovieCard';
+import UpcomingCard from '../components/UpcomingCard';
 
 const Upcoming = () => {
   const [movies, setMovies] = useState([])
@@ -34,7 +34,7 @@ const Upcoming = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         {
-          movies.map(movie => <MovieCard key={movie.id} movie={movie}></MovieCard>)
+          movies.map(movie => <UpcomingCard key={movie.id} movie={movie}></UpcomingCard>)
         }
       </div>
     </div>

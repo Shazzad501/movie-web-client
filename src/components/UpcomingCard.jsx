@@ -1,11 +1,7 @@
-import React from "react";
-import Rating from "react-rating";
-import { FaStar, FaRegStar } from "react-icons/fa";
-import { Link} from "react-router-dom";
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
 
-const MovieCard = ({movie}) => {
+const UpcomingCard = ({movie}) => {
   return (
     <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
@@ -28,22 +24,12 @@ const MovieCard = ({movie}) => {
         <p className="text-gray-600">
           <span className="font-semibold">Release Year:</span> {movie.releaseYear}
         </p>
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-gray-700">Rating:</span>
-          <p>
-          <Rating
-            initialRating={parseFloat(movie.rating)}
-            emptySymbol={<FaRegStar className="text-gray-500 text-lg" />}
-            fullSymbol={<FaStar className="text-yellow-500 text-lg" />}
-            readonly
-          />
-          </p>
-        </div>
+        
         <div className="card-actions mt-5"> 
         
-            <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
-          View Details
-          </Link>
+            <button onClick={()=>toast.error('No action! View card only.')} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+          View only
+          </button>
 
         </div>
       </div>
@@ -51,4 +37,4 @@ const MovieCard = ({movie}) => {
   );
 };
 
-export default MovieCard;
+export default UpcomingCard;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const UpdateMovie = () => {
   const movie = useLoaderData()
@@ -96,7 +97,19 @@ const UpdateMovie = () => {
   }, [])
   return (
     <div className="rounded-lg shadow-lg my-7">
-      <h2 className="text-3xl font-bold text-center mb-6">Update {movie.title} Movie</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">
+      <Typewriter
+                words={[
+                  `Update ${movie.title} Movie`,
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+      </h2>
       <form onSubmit={handleUpdateMovie} className="w-11/12 mx-auto">
         {/* Movie Poster and title */}
         <div className="w-full flex flex-col lg:flex-row gap-5">

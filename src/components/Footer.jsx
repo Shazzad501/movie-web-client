@@ -4,30 +4,31 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center text-white rounded py-10 bg-black">
-  <nav className="flex gap-4">
-    <Link to='/' className="link link-hover font-bold text-lg">Home</Link>
-    <Link to='/all-movie' className="link link-hover font-bold text-lg">Movies</Link>
-    <Link to='' className="link link-hover font-bold text-lg">Upcoming</Link>
-    <Link to='/login'className="link link-hover font-bold text-lg">Login</Link>
-  </nav>
-  <nav>
-    <div className="grid grid-flow-col gap-4">
-      <Link to='https://twitter.com/home' target='_blank' className='text-2xl font-semibold text-blue-900'>
-        <FaTwitter></FaTwitter>
-      </Link>
-      <Link to='https://www.youtube.com/' target='_blank' className='text-2xl font-semibold text-red-700'>
-        <FaYoutube></FaYoutube>
-      </Link>
-      <Link to='https://www.facebook.com/' target='_blank' className='text-2xl font-semibold text-blue-800'>
-        <FaFacebook></FaFacebook>
-      </Link>
-    </div>
-  </nav>
-  <aside>
-    <p className='font-bold text-base'>Copyright © {new Date().getFullYear()} - All right reserved by Maruf</p>
-  </aside>
-</footer>
+<section className="flex items-center justify-center bg-black text-white py-12 px-6">
+      <div className="text-center space-y-6 max-w-lg">
+        {/* Icon */}
+        <div className="flex justify-center">
+          <div className="w-12 h-12 flex items-center justify-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/60/60738.png" // Placeholder for film reel icon
+              alt="Film Reel Icon"
+              className="w-12"
+            />
+          </div>
+        </div>
+        {/* Title */}
+        <h1 className="text-5xl font-bold">Hey viewer</h1>
+        {/* Description */}
+        <p className="text-lg leading-relaxed">
+          Get the show on the road in the best way possible with Movie!
+          Everything any movie maker & production studio may need. Action!
+        </p>
+        {/* Button */}
+        <Link to='/add-movie' className="btn bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg shadow-md font-medium">
+          Click me
+        </Link>
+      </div>
+    </section>
   );
 };
 

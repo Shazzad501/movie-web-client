@@ -24,7 +24,7 @@ const Slider = () => {
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-center items-center text-center text-white p-6 rounded-lg">
             <p
-              data-aos="fade-left"
+              data-aos="fade-up"
               className="mb-4 font-semibold text-lg md:text-xl max-w-2xl leading-relaxed">
               Movies have a unique ability to transport us to different worlds, stir emotions, and evoke memories. They are a reflection of our lives, dreams, and fantasies, offering a window into cultures, stories, and experiences we might never encounter otherwise.
             </p>

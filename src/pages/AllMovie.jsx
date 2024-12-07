@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import toast from 'react-hot-toast';
+import { Typewriter } from 'react-simple-typewriter';
 
 const AllMovie = () => {
   const [loading, setLoading] = useState(true);
@@ -53,7 +54,19 @@ const AllMovie = () => {
   return (
     <div>
       <div className="flex flex-col gap-5 items-center justify-center py-10">
-        <h2 className="font-bold text-2xl text-center">Hey viewer, search your movie by title.</h2>
+        <h2 className="font-bold text-2xl text-center">
+        <Typewriter
+                words={[
+                  "Hey viewer, search your movie by title.",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+        </h2>
         <div className="flex items-center justify-center">
           <form onSubmit={handleSearch}>
             <div>

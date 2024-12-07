@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Typewriter } from "react-simple-typewriter";
 
 const AddMovieForm = () => {
   const { user } = useContext(AuthContext);
@@ -98,7 +99,19 @@ const AddMovieForm = () => {
   return (
     <div className="rounded-lg shadow-lg my-7">
       <div className="px-5">
-      <h2 className="text-3xl font-bold text-center mb-3">Add a New Movie</h2>
+      <h2 className="text-4xl font-bold text-center mb-3">
+          <Typewriter
+                words={[
+                  "Add a new movie",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+      </h2>
       <p className="text-center text-base font-semibold mb-6">Adding a new movie is an exciting opportunity to share stories and   <br className="hidden md:block" />creativity with the world. Whether it's a thrilling blockbuster, a heartfelt drama, or a light-hearted comedy,<br className="hidden md:block" /> every new movie contributes to the diverse world of cinema.</p>
       </div>
       <form onSubmit={handleAddMovie} className="w-11/12 mx-auto">
