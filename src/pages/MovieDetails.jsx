@@ -108,7 +108,7 @@ const MovieDetails = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-4 mt-6 justify-center">
+      <div className="flex flex-wrap gap-4 mt-6 justify-center">
       <Link 
         to={`/all-movie`}
         className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg"
