@@ -68,8 +68,7 @@ const MovieDetails = () => {
               else toast.error("Failed to add movie to favorites.");
             })
             .catch((err) => {
-              console.log(err)
-              toast.error("Something went wrong!")
+              toast.error("Something went wrong!", err)
             });
         }
       });
