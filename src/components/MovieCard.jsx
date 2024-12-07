@@ -1,10 +1,12 @@
 import React from "react";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 const MovieCard = ({movie}) => {
+  const location = useLocation()
   return (
     <div className="card bg-base-100 shadow-xl border border-gray-200 rounded-lg p-5 hover:shadow-2xl transition-shadow duration-300">
       <figure className="overflow-hidden rounded-lg">
@@ -39,9 +41,17 @@ const MovieCard = ({movie}) => {
           </p>
         </div>
         <div className="card-actions mt-5"> 
-          <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+          {
+            location.pathname = '/upcoming'
+            ?
+            <button onClick={()=>toast.success('No action! View card only.')} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
+            View card
+            </button>
+            :
+            <Link to={`/movie/${movie._id}`} className="btn w-full bg-red-400 hover:bg-red-400 text-white">
           View Details
-        </Link>
+          </Link>
+          }
         </div>
       </div>
     </div>

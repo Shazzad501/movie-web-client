@@ -7,6 +7,7 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { Typewriter } from 'react-simple-typewriter';
 
 const Login = () => {
   const {setUser, loginUser, createUserWithGoogle} = useContext(AuthContext)
@@ -85,9 +86,21 @@ const Login = () => {
     });
   }, [])
   return (
-    <div className="flex items-center justify-center min-h-screen">
-        <div data-aos="fade-down" className="card bg-base-100 w-full max-w-md py-16 px-5 shrink-0 rounded-md">
-          <h2 className="font-bold text-xl text-center ">Login your account</h2>
+    <div className="flex items-center justify-center min-h-screen py-6">
+        <div data-aos="fade-down" className="card bg-base-100 w-full max-w-md py-16 px-5 shrink-0 rounded-md  border-2">
+          <h2 className="font-bold text-xl text-center ">
+          <Typewriter
+                words={[
+                  "Login your account",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+          </h2>
           <form onSubmit={handleLogin} className="card-body">
             {/* Email filed */}
             <div className="form-control">
@@ -131,9 +144,9 @@ const Login = () => {
             <div className="form-control mt-6">
               {/* <button className="btn bg-[#073B4c] font-bold text-base text-white hover:bg-[#073B4c]">Login</button> */}
 
-              <input  type="submit" value="Login" className="btn bg-[#073B4c] font-bold text-base text-white hover:bg-[#073B4c]"/>
+              <input  type="submit" value="Login" className="btn bg-gradient-to-tr from-blue-600 to-blue-800 font-bold text-base text-white hover:bg-gradient-to-tl "/>
 
-              <button onClick={handleGoogleLogin} className="btn mt-6 bg-[#073B4c] font-bold text-base text-white hover:bg-[#073B4c]"><FaGoogle></FaGoogle>Login with Google</button>
+              <button onClick={handleGoogleLogin} className="btn mt-6 bg-gradient-to-tl from-blue-600 to-blue-800 hover:bg-gradient-to-tr font-bold text-base text-white"><FaGoogle></FaGoogle>Login with Google</button>
             </div>
           </form>
           <p className='font-semibold text-sm text-center'>Don't Have An Account? <Link to='/register' className='font-semibold text-sm text-red-600 underline'>Register</Link></p>

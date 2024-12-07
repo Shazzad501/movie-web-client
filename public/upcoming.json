@@ -1,0 +1,92 @@
+[
+  {
+    "id":1,
+    "poster": "https://i.ibb.co.com/n0Qv3WK/dune.jpg",
+    "title": "Dune: Part Two",
+    "genre": "Science Fiction",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.5
+  },
+  {
+    "id":2,
+    "poster": "https://i.ibb.co.com/zrkcxzy/compo.jpg",
+    "title": "Kung Fu Panda 4",
+    "genre": "Comedy",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 5
+  },
+  {
+    "id":3,
+    "poster": "https://i.ibb.co.com/HY7ZDHq/gorgilla.jpg",
+    "title": "Godzilla x Kong: The New Empire",
+    "genre": "Adventure",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.8
+  },
+  {
+    "id":4,
+    "poster": "https://i.ibb.co.com/fr4h9gc/king.jpg",
+    "title": "Mufasa: The Lion King",
+    "genre": "Animation",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.6
+  },
+  {
+    "id":5,
+    "poster": "https://i.ibb.co.com/bb0FLtJ/Frozen-Empire.jpg",
+    "title": "Ghostbusters: Frozen Empire",
+    "genre": "Fantasy",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4
+  },
+  {
+    "id":6,
+    "poster": "https://i.ibb.co.com/yYZnKmh/Beetlejuice-2.jpg",
+    "title": "Beetlejuice 2",
+    "genre": "Horror",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.3
+  },
+  {
+    "id":7,
+    "poster": "https://i.ibb.co.com/j5V7DF7/Deadpool-3.jpg",
+    "title": "Deadpool 3",
+    "genre": "Action",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 5
+  },
+  {
+    "id":8,
+    "poster": "https://i.ibb.co.com/JcwgYyF/Inside-Out-2.jpg",
+    "title": "Inside Out 2",
+    "genre": "Animation",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.6
+  },
+  {
+    "id":9,
+    "poster": "https://i.ibb.co.com/D880Qsc/The-War-of-the-Rohirrim.jpg",
+    "title": "The Lord of the Rings: The War of the Rohirrim",
+    "genre": "Fantasy",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 4.9
+  },
+  {
+    "id":10,
+    "poster": "https://i.ibb.co.com/jyB7j9C/The-Brutalist.jpg",
+    "title": "The Brutalist",
+    "genre": "Historical",
+    "duration": "Not specified",
+    "releaseYear": 2025,
+    "rating": 5
+  }
+]

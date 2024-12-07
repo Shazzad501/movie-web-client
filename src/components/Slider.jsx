@@ -11,13 +11,13 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="">
-      <div className="carousel w-full py-8">
+    <div className="py-8">
+      <div className="carousel w-full">
 
         {/* Slide 1 */}
         <div id="slide1" className="carousel-item relative w-full rounded-lg overflow-hidden">
           <img
-            src="https://i.ibb.co.com/c2xPNk6/till-movie.jpg"
+            src="https://i.ibb.co.com/nCm0mTH/No-way-home.jpg"
             alt="Slide 1"
             className="w-full h-[500px] object-cover rounded-lg"
           />
@@ -54,7 +54,7 @@ const Slider = () => {
         {/* Slide 2 */}
         <div id="slide2" className="carousel-item relative w-full rounded-lg overflow-hidden">
           <img
-            src="https://i.ibb.co.com/4RRXZxT/thor-ironman.webp"
+            src="https://i.ibb.co.com/ZgWvW7c/house-of-dead.jpg"
             alt="Slide 2"
             className="w-full h-[500px] object-cover rounded-lg"
           />
@@ -91,7 +91,7 @@ const Slider = () => {
         {/* Slide 3 */}
         <div id="slide3" className="carousel-item relative w-full rounded-lg overflow-hidden">
           <img
-            src="https://i.ibb.co.com/jR48Trb/The-Batman.webp"
+            src="https://i.ibb.co.com/GCC5zTh/well-tried.jpg"
             alt="Slide 3"
             className="w-full h-[500px] object-cover rounded-lg"
           />

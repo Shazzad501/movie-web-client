@@ -11,6 +11,7 @@ import FavoriteMovie from "../pages/FavoriteMovie";
 import PrivateRoute from "./PrivateRoute";
 import MovieDetails from "../pages/MovieDetails";
 import FeaturedMovie from "../components/FeaturedMovie";
+import Upcoming from "../pages/Upcoming";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/favorite-movie',
         element: <PrivateRoute><FavoriteMovie></FavoriteMovie></PrivateRoute>
+      },
+      {
+        path: '/upcoming',
+        element: <Upcoming></Upcoming>        
       },
       {
         path: '/login',

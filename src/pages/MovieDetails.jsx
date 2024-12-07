@@ -54,7 +54,7 @@ const MovieDetails = () => {
     fetch(`http://localhost:5000/favorites/${user?.email}`)
       .then((res) => res.json())
       .then((favorites) => {
-        const isAlreadyFavorite = favorites.some((fav) => fav._id === movie._id);
+        const isAlreadyFavorite = favorites.some((fav) => fav.title === movie.title);
         if (isAlreadyFavorite) {
           toast.error("This movie is already in your favorites!");
         } else {

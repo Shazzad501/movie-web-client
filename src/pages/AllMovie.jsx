@@ -53,7 +53,7 @@ const AllMovie = () => {
   return (
     <div>
       <div className="flex flex-col gap-5 items-center justify-center py-10">
-        <h2 className="font-bold text-2xl">Hey viewer, search your movie by title.</h2>
+        <h2 className="font-bold text-2xl text-center">Hey viewer, search your movie by title.</h2>
         <div className="flex items-center justify-center">
           <form onSubmit={handleSearch}>
             <div>

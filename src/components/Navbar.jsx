@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+
 
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -63,6 +64,15 @@ const Navbar = () => {
             Favorite Movie
           </NavLink>
           }
+          <NavLink
+              to="/upcoming"
+              className={({ isActive }) =>
+                `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
+                  isActive ? 'border-b-4 border-l-0 border-r-0 border-t-0' : ''
+                }`
+              }>
+              Upcoming Movie
+            </NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-3 items-center">
@@ -76,7 +86,7 @@ const Navbar = () => {
             src={user && user?.photoURL} 
             alt="user img" />
             </div>
-            <Link onClick={handleLogout} className="btn font-bold text-base">
+            <Link onClick={handleLogout} className="btn font-bold text-base hidden md:flex">
               Logout
             </Link>
           </div>
@@ -145,6 +155,20 @@ const Navbar = () => {
               }>
               Favorite Movie
             </NavLink>
+            }
+            <NavLink
+              to="/upcoming"
+              className={({ isActive }) =>
+                `btn hover:border-l-0 hover:border-r-0 hover:border-t-0 hover:bg-transparent hover:border-b-2 bg-transparent font-bold text-base ${
+                  isActive ? 'border-b-4 border-l-0 border-r-0 border-t-0' : ''
+                }`
+              }>
+              Upcoming Movie
+            </NavLink>
+            {
+              user &&  <Link onClick={handleLogout} className="btn font-bold text-base">
+              Logout
+            </Link>
             }
           </ul>
         </div>

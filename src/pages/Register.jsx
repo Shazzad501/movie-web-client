@@ -5,9 +5,10 @@ import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { Typewriter } from 'react-simple-typewriter';
 
 const Register = () => {
-  const {newUserSet, user, setUser, upDateProfile} = useContext(AuthContext);
+  const {newUserSet, setUser, upDateProfile} = useContext(AuthContext);
   const navigate = useNavigate()
   // eye pass show stat
   const [showPass, setShowPass] = useState(false)
@@ -24,11 +25,11 @@ const Register = () => {
     const password = form.get('password');
 
     // Validate password
-    // const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
-    // if (!passwordRegex.test(password)) {
-    //   setError('Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, and one digit.');
-    //   return;
-    // }
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      setError('Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, and one digit.');
+      return;
+    }
 
     // error state reset
     setError('')
@@ -60,9 +61,21 @@ const Register = () => {
     });
   }, [])
   return (
-    <div className="flex items-center justify-center min-h-screen overflow-hidden">
-    <div data-aos="fade-right" className="card bg-base-100 w-full max-w-md py-12 px-5 shrink-0 rounded-md">
-      <h2 className="font-bold text-xl text-center ">Register your account</h2>
+    <div className="flex items-center justify-center min-h-screen overflow-hidden py-6">
+    <div data-aos="fade-down" className="card bg-base-100 w-full max-w-md py-12 px-5 shrink-0 rounded-md border-2">
+      <h2 className="font-bold text-xl text-center ">
+      <Typewriter
+                words={[
+                  "Register a new account",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+      </h2>
       <form onSubmit={handleRegister} className="card-body">
         {/* Name filed */}
         <div className="form-control">
@@ -125,7 +138,7 @@ const Register = () => {
           </div>
 
         <div className="form-control mt-6">
-          <button className="btn bg-[#073B4c] font-bold text-base text-white hover:bg-[#073B4c]">Register</button>
+          <button className="btn  font-bold text-base text-white bg-gradient-to-tl from-blue-600 to-blue-800 hover:bg-gradient-to-tr">Register</button>
         </div>
       </form>
       <p className='font-semibold text-sm text-center'>Already Have An Account? <Link to='/login' className='font-semibold text-sm text-green-600 underline'>Login</Link></p>
