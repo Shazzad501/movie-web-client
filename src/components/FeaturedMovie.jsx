@@ -7,7 +7,7 @@ const FeaturedMovie = () => {
   const [movies, setMovies] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/featured-movies')
+    fetch('https://movie-portal-lilac.vercel.app/featured-movies')
     .then(res=> res.json())
     .then(data=>{
       setMovies(data);

@@ -72,7 +72,7 @@ const AddMovieForm = () => {
         summary,
         userEmail: user?.email,
       };
-      fetch('http://localhost:5000/movie',{
+      fetch('https://movie-portal-lilac.vercel.app/movie',{
         method: "POST",
         headers: {
           "content-type": "application/json",

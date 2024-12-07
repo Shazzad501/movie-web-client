@@ -14,7 +14,7 @@ const FavoriteMovie = () => {
     document.title = "Favorite || Movie Lover";
 
     if (user?.email) {
-      fetch(`http://localhost:5000/favorites/${user.email}`)
+      fetch(`https://movie-portal-lilac.vercel.app/favorites/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMoviesData(data);

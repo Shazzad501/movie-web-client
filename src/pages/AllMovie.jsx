@@ -13,7 +13,7 @@ const AllMovie = () => {
   useEffect(() => {
     // daynamic title 
     document.title = "Movies || Movie Lover"
-    fetch('http://localhost:5000/movie')
+    fetch('https://movie-portal-lilac.vercel.app/movie')
       .then((res) => res.json())
       .then((data) => {
         setMoviesData(data);

@@ -72,7 +72,7 @@ const UpdateMovie = () => {
             rating,
             summary,
           };
-          fetch(`http://localhost:5000/movie/${movie._id}`,{
+          fetch(`https://movie-portal-lilac.vercel.app/movie/${movie._id}`,{
             method: "PUT",
             headers: {
               "content-type": "application/json",

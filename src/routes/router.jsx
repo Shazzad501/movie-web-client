@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: '/movie/:id',
         element: <PrivateRoute><MovieDetails></MovieDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/movie/${params.id}`)
+        loader: ({params})=> fetch(`https://movie-portal-lilac.vercel.app/movie/${params.id}`)
       },
       {
         path: '/add-movie',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/update-movie/:id',
         element: <PrivateRoute><UpdateMovie></UpdateMovie></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/movie/${params.id}`)
+        loader: ({params})=> fetch(`https://movie-portal-lilac.vercel.app/movie/${params.id}`)
       },
       {
         path: '/favorite-movie',

@@ -27,7 +27,7 @@ const MovieDetails = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/movie/${id}`, {
+          fetch(`https://movie-portal-lilac.vercel.app/movie/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -50,14 +50,14 @@ const MovieDetails = () => {
     const { _id, ...movieWithoutId } = movie;
     const favoriteData = { favoriteEmail: user?.email, ...movieWithoutId };
   
-    fetch(`http://localhost:5000/favorites/${user?.email}`)
+    fetch(`https://movie-portal-lilac.vercel.app/favorites/${user?.email}`)
       .then((res) => res.json())
       .then((favorites) => {
         const isAlreadyFavorite = favorites.some((fav) => fav.title === movie.title);
         if (isAlreadyFavorite) {
           toast.error("This movie is already in your favorites!");
         } else {
-          fetch("http://localhost:5000/favorites", {
+          fetch("https://movie-portal-lilac.vercel.app/favorites", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(favoriteData),
